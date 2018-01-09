@@ -1,0 +1,6 @@
+<%= form_for(@gallery) do |f|  %>
+  <div class="fallback">
+    <%= f.file_field :image ,:multiple => true%><br>
+    <%= f.submit "Upload your image" %>
+  </div>
+<% end %>

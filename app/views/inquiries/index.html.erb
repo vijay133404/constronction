@@ -1,32 +1,96 @@
-<p id="notice"><%= notice %></p>
 
-<h1>Inquiries</h1>
+<div class="offer-w3layouts" id="about">
+  <div class="container">
+    <div class="offer-header-agile">
+      <h3 class="tittle">what we <span>offer</span></h3>
+      <p>we offer our customers the best services & solutions, this is our main services list</p>
+    </div>
+      <div class="row">
+        <div class="col-md-4 offer-grid ">
+          <div class="icon">
+            <i class="fa fa-star-o" aria-hidden="true"></i>
+          </div>
+          <h4>Lorem ipsum</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ut metus sit amet magna vehicula eleifend in in urna.</p>
+          <div class="readmore-w3"><a class="readmore" href="#" data-toggle="modal" data-target="#myModal2">Read More</a></div>
+            <!-- Modal2 -->
+            <div class="modal fade" id="myModal2" role="dialog">
+              <div class="modal-dialog">
+              <!-- Modal content-->
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4>Aenean sagittis</h4>
+                    <h5>Lorem Ipsum</h5>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- //Modal2 -->
+        </div>
+      <div class="col-md-4 offer-grid ">
+          <div class="icon">
+            <i class="fa fa-map-o" aria-hidden="true"></i>
+          </div>
+          <h4>Lorem ipsum</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ut metus sit amet magna vehicula eleifend in in urna.</p>
+          <div class="readmore-w3"><a class="readmore" href="#" data-toggle="modal" data-target="#myModal2">Read More</a></div>
+        </div>
+        <div class="col-md-4 offer-grid ">
+          <div class="icon">
+            <i class="fa fa-university" aria-hidden="true"></i>
+          </div>
+          <h4>Lorem ipsum</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ut metus sit amet magna vehicula eleifend in in urna.</p>
+          <div class="readmore-w3"><a class="readmore" href="#" data-toggle="modal" data-target="#myModal2">Read More</a></div>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+  </div>
+</div>
+<!--services-->
+<div class="services-agileits" id="service">
+  <div class="services-info">
+    <div class="col-md-7 services-left">
+    </div>
+    <div class="col-md-5 services-right-agileinfo">
+      <div class="right-header-w3ls">
+        <h3 class="tittle">our  <span>services</span></h3>
+        <p> Proin tincidunt imperdiet massa non aliquet. Nullam vestibulum sem vitae ante aliquam, eget aliquet sapien vehicula.</p>
+      </div>
+      <div class="service-grids-wthree">
+        <div class="grid">
+          <div class="service-icon">
+            <i class="fa fa-home" aria-hidden="true"></i>
+          </div>
+          <h4>Lorem ipsum</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ut metus sit amet magna vehicula eleifend in in urna.</p>
+        </div>
+        <div class="grid">
+          <div class="service-icon">
+            <i class="fa fa-key" aria-hidden="true"></i>
+          </div>
+          <h4>Lorem ipsum</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ut metus sit amet magna vehicula eleifend in in urna.</p>
+        </div>
+        <div class="grid">
+          <div class="service-icon">
+            <i class="fa fa-building-o" aria-hidden="true"></i>
+          </div>
+          <h4>Lorem ipsum</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ut metus sit amet magna vehicula eleifend in in urna.</p>
+        </div>
+      </div>
+    </div>
+    <div class="clearfix"></div>
+  </div>
+</div>
+<!--//services-->
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Email</th>
-      <th>Phone number</th>
-      <th>Inquiry type</th>
-      <th>Description</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @inquiries.each do |inquiry| %>
-      <tr>
-        <td><%= inquiry.name %></td>
-        <td><%= inquiry.email %></td>
-        <td><%= inquiry.phone_number %></td>
-        <td><%= inquiry.inquiry_type %></td>
-        <td><%= inquiry.description %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<!--/gallery-->
+<%=render'galleries/index'%>
+<!--//gallery-->
 
-<br>
-
-<%= link_to 'New Inquiry', new_inquiry_path %>
+<%=render'inquiries/form', inquiry: @inquiry %>

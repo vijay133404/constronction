@@ -1,0 +1,58 @@
+	
+<div class="top-bar"> 
+		<div class="container">
+				<div class="header-nav">
+					<nav class="navbar navbar-default">
+						<!-- Brand and toggle get grouped for better mobile display -->
+						<div class="navbar-header">
+							<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+								<span class="sr-only">Toggle navigation</span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+							</button>
+							<h1><a class="navbar-brand" href="/">Thundergc</a></h1>
+						</div>
+							<!-- Collect the nav links, forms, and other content for toggling -->
+						<div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
+							<nav class="linkEffects linkHoverEffect_12">
+								<ul>
+									<li><a class="active" href="/"><span>Home</span></a></li> 
+									<li><a class="scroll" href="#about"><span>About</span></a></li> 
+									<li><a class="scroll" href="#service"><span>Services</span></a></li>
+									<li><a class="scroll" href="#gallery"><span>Gallery</span></a></li> 
+									<li><a class="scroll" href="#contact"><span>Contact</span></a></li> 
+									 
+								</ul>
+							</nav>	
+						</div>
+						</nav>
+					</div>
+				</div>
+	</div>
+
+ <div class="slider">
+			<div class="callbacks_container">
+				<ul class="rslides" id="slider">
+				  <%@sliders = Slider.all %>
+				    <% @sliders.each do |slid|%>
+                
+					<li>
+
+						<div class="slider-img">
+                            <%= image_tag slid.image.url, alt:slid.image.url %>
+							
+						</div>
+						<div class="slider-info">
+							<span class="italic"><%=slid.title%> </span>
+							<h4> <%=slid.description%></h4>
+							
+						</div>
+					</li>
+					<%end%>
+					
+				</ul>
+				
+			</div>
+			  <div class="clearfix"></div>
+</div>

@@ -11,27 +11,64 @@
 // about supported directives.
 //
 //= require rails-ujs
-//= require turbolinks
-//= require jquery3
-//= require popper
-//= require bootstrap-sprockets
+//= require jquery
+//= require js/bootstrap-3.1.1.min
 //= require dropzone
-//= require_tree .
+//= require js/modernizr.custom
+//= require js/jquery.chocolat
+//= require js/jquery.hoverdir
+//= require js/responsiveslides.min
+//= require js/move-top
+//= require js/easing
 
 
-$(document).ready(function(){
-  // disable auto discover
-  Dropzone.autoDiscover = false;
 
 
-  var dropzone = new Dropzone (".dropzone", {
-    maxFilesize: 256, // Set the maximum file size to 256 MB
-    paramName: "gallery[image]", // Rails expects the file upload to be something like model[field_name]
-    addRemoveLinks: false // Don't show remove links on dropzone itself.
-  });
 
-  dropzone.on("success", function(file) {
-    this.removeFile(file)
-    $.getScript("/galleries")
-  })
+
+$(function () {
+	$("#slider").responsiveSlides({
+		auto: true,
+		pager: true,
+		nav: true,
+		speed: 1000,
+		namespace: "callbacks",
+		before: function () {
+			$('.events').append("<li>before event fired.</li>");
+		},
+		after: function () {
+			$('.events').append("<li>after event fired.</li>");
+		}
+	});
 });
+
+jQuery(document).ready(function($) {
+		$(".scroll").click(function(event){		
+			event.preventDefault();
+			$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+		});
+	});
+
+$(function() {
+			
+				$(' #da-thumbs > li ').each( function() { $(this).hoverdir(); } );
+
+			});
+
+
+	$(document).ready(function() {
+		/*
+			var defaults = {
+			containerID: 'toTop', // fading element id
+			containerHoverID: 'toTopHover', // fading element hover id
+			scrollSpeed: 1200,
+			easingType: 'linear' 
+			};
+		*/								
+		$().UItoTop({ easingType: 'easeOutQuart' });
+		});
+
+
+	$(function() {
+			$('.gallery a').Chocolat();
+		});
